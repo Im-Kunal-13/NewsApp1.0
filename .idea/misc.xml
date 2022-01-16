@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/AndroidStudioProjects/Practice/NewsApp1.0/app/src/main/res/drawable/custom_progress_bar0.xml" value="0.1824074074074074" />
         <entry key="..\:/Projects/AndroidStudioProjects/Practice/NewsApp1.0/app/src/main/res/layout/activity_news.xml" value="0.25" />
+        <entry key="..\:/Projects/AndroidStudioProjects/Practice/NewsApp1.0/app/src/main/res/layout/fragment_article.xml" value="0.25" />
         <entry key="..\:/Projects/AndroidStudioProjects/Practice/NewsApp1.0/app/src/main/res/layout/fragment_breaking_news.xml" value="0.25" />
         <entry key="..\:/Projects/AndroidStudioProjects/Practice/NewsApp1.0/app/src/main/res/layout/fragment_saved_news.xml" value="0.25" />
         <entry key="..\:/Projects/AndroidStudioProjects/Practice/NewsApp1.0/app/src/main/res/layout/fragment_search_news.xml" value="0.25" />
