@@ -65,7 +65,7 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
         viewModel.getSavedNews().observe(
             viewLifecycleOwner,
             Observer { articles ->
-                newsAdapter.differ.submitList(articles)
+                newsAdapter.differ.submitList(articles.toList())
             }
         )
     }

@@ -27,7 +27,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
 
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
-    val TAG = "SearchNewsFragment"
+    val searchTag = "SearchNewsFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,7 +51,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 delay(SEARCH_NEWS_TIME_DELAY)
                 editable?.let {
                     if (editable.toString().isNotEmpty()) {
-                        viewModel.searchNews(editable.toString())
+                        viewModel.searchNews(editable.toString(), false)
                     }
                 }
             }
@@ -70,7 +70,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
-                        Log.e(TAG, "An error occured: $message")
+                        Log.e(searchTag, "An error occured: $message")
                     }
                 }
                 is Resource.Loading -> {
@@ -120,7 +120,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 isNotLoadingAndNotLastPage && isAtLastItem && isNotAtBeginning && isTotalMoreThanVisible && isScrolling
 
             if (shouldPaginate) {
-                viewModel.searchNews(etSearch.toString())
+                viewModel.searchNews(etSearch.text.toString(), true)
                 isScrolling = false
             }
         }

@@ -32,10 +32,10 @@ class NewsViewModel(
         breakingNews.postValue(handleBreakingNewsResponse(response))
     }
 
-    fun searchNews(searchQuery: String) = viewModelScope.launch {
+    fun searchNews(searchQuery: String, append: Boolean) = viewModelScope.launch {
         searchNews.postValue(Resource.Loading())
         val response = newsRepository.searchNews(searchQuery, searchNewsPage)
-        searchNews.postValue(handleSearchNewsResponse(response))
+        searchNews.postValue(handleSearchNewsResponse(response, append))
     }
 
     private fun handleBreakingNewsResponse(response: Response<NewsResponse>): Resource<NewsResponse> {
@@ -56,9 +56,13 @@ class NewsViewModel(
         return Resource.Error(response.message())
     }
 
-    private fun handleSearchNewsResponse(response: Response<NewsResponse>): Resource<NewsResponse> {
+    private fun handleSearchNewsResponse(response: Response<NewsResponse>, append: Boolean): Resource<NewsResponse> {
         if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
+                if(!append) {
+                    searchNewsPage = 1
+                    searchNewsResponse = null
+                }
                 searchNewsPage++
                 if (searchNewsResponse == null) {
                     searchNewsResponse = resultResponse
