@@ -16,18 +16,6 @@
             app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
-        android:id="@+id/savedNewsFragment"
-        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SavedNewsFragment"
-        android:label="SavedNewsFragment" >
-        <action
-            android:id="@+id/action_savedNewsFragment_to_articleFragment"
-            app:destination="@id/articleFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
-    </fragment>
-    <fragment
         android:id="@+id/searchNewsFragment"
         android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SearchNewsFragment"
         android:label="SearchNewsFragment" >

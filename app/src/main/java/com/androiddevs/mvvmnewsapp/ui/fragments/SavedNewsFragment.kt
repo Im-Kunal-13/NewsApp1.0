@@ -29,10 +29,10 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
             val bundle = Bundle().apply {
                 putSerializable("article", it)
             }
-            findNavController().navigate(
-                R.id.action_savedNewsFragment_to_articleFragment,
-                bundle
-            )
+//            findNavController().navigate(
+//                R.id.action_savedNewsFragment_to_articleFragment,
+//                bundle
+//            )
         }
 
 // note that this is  how we use itemTouchCallBack
